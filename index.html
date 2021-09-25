@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.2.0/js/tableexport.min.js">
+        
+        
+        
+        
+        <!--
+        
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+        
+        
+        <script src="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css"></script>
+
+
+        -->
+        
+        <!--
+        
+        <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+        
+        -->
+
+        <title>Cookie Extract - Chrome Extension</title>
+        <meta name="author" content="">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Kanit|Rubik" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+        <style>
+            body{
+                min-width: 420px;
+                min-height: 10%;
+                color: #172B4D;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                    
+                background:linear-gradient(90deg, gainsboro ,whitesmoke);    
+                
+            }
+            .title{
+                font-family: Rubik;
+                color: crimson;
+            }
+            .developer{
+                opacity: 0.8;
+            }
+            .btnBelow{
+                font-family: 'Kanit', sans-serif;
+
+            }
+            #banner{
+                font-family: 'Rubik', sans-serif;
+            }
+            
+            
+            #cookieslog{
+                background-color: antiquewhite;
+                border: solid thin crimson;
+            }
+            
+            .del_cookie{
+                display: none;
+            }
+            .set_cookie{
+                display: none;
+            }
+            #center1{
+                display: none;
+            }
+            
+            #b1{
+                width: 130px;
+                height: 33px;
+                border: solid 2px #079bf4;
+                position: absolute;
+                margin-left: 12px;
+                margin-top: 0px;
+                border-radius: 3px;
+                box-shadow: 0 0 2px grey;
+                
+            }
+            
+            
+            
+            
+        </style>
+        
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>  
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="title text-center">Cookie Extractor</h2>
+            
+            <center id="center1"><button type="button" class="btn btn-default"><strong>Total Cookies <span class="badge" id="cookie-counter"></span></strong></button>
+            </center>
+                <div class="clearfix"></div>
+            <br>
+            <div class="alert alert-info alert-dismissible" id="banner">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <p id="message">Please enter <strong>complete url</strong> below and press <span class='label label-primary'>Display Cookies</span></p>
+                  </div>
+                  <div id="result"></div>
+            <form>
+              <div class="form-group">
+                <label for="url">Enter Domain Name:</label>
+                <input type="text" class="form-control" id="url" required="required">
+              </div>
+              
+              <div class="form-group" style="display:none;" id="cookie">
+                <label for="key">Name:</label>
+                <input type="text" class="form-control" id="key" required="required">
+                <label for="value">Value:</label>
+                <input type="text" class="form-control" id="value" required="required">
+              </div>
+            <button type = "button" class="btn del_cookie" id="clear_cookies">Clear All Cookies</button> 
+            <button type="button" class="btn btnBelow btn-primary" id="display_cookies">Display Cookies</button>
+            <button type="button" class="btn set_cookie" id="set_cookies">Set Cookies</button> 
+                
+            <button id="b1">EXPORT REPORT</button>
+                
+            </form>
+            
+            <div class="clearfix"></div>
+            <br>
+            <table id="cookieslog" class="table table-bordered table-striped">
+            
+                
+            </table> <!--class="table table-hover table-bordered"-->
+          </div>
+          
+        <div id="developer"><p class="text-center text-info developer"><span class="label label-default"></span> </p></div>
+
+        <script src="index.js"></script>
+        <script src="background.js"></script>
+        <script src="FileSaver.min.js"></script> 
+        
+        <script src="tableExport.min.js"></script>
+        <script src="xlsx.core.min.js"></script>
+        
+        <!--excel sheet-->
+        
+        <script>
+            
+            
+           
+            
+            
+            
+           
+            
+  
+        
+        </script>
+        
+    
+    </body>
+</html>
